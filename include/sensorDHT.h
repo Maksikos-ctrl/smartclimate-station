@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include "DHT.h"
 
-// Определение пинов и типа датчика
+
 #define DHTPIN 4
 #define DHTTYPE DHT11
 
@@ -14,7 +14,7 @@ private:
     float lastTemperature;
     float lastHumidity;
     unsigned long lastReadTime;
-    static const unsigned long READ_INTERVAL = 2000; // Минимальный интервал между чтениями (мс)
+    static const unsigned long READ_INTERVAL = 2000; 
 
 public:
     SensorDHT();

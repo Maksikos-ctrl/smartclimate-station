@@ -6,7 +6,7 @@ UltrasonicSensor::UltrasonicSensor() {
     personPresent = false;
     presenceStartTime = 0;
     absenceStartTime = 0;
-    presenceThreshold = 100.0; // Инициализируем в конструкторе
+    presenceThreshold = 100.0; 
 }
 
 void UltrasonicSensor::begin() {
@@ -21,26 +21,26 @@ void UltrasonicSensor::begin() {
 float UltrasonicSensor::measureDistance() {
     unsigned long currentTime = millis();
     
-    // Ограничиваем частоту измерений
+   
     if (currentTime - lastMeasurement < MEASUREMENT_INTERVAL) {
         return lastDistance;
     }
     
-    // Генерируем ультразвуковой импульс
+   
     digitalWrite(TRIG_PIN, LOW);
     delayMicroseconds(2);
     digitalWrite(TRIG_PIN, HIGH);
     delayMicroseconds(10);
     digitalWrite(TRIG_PIN, LOW);
     
-    // Измеряем время отклика
-    unsigned long duration = pulseIn(ECHO_PIN, HIGH, 30000); // Таймаут 30ms
+   
+    unsigned long duration = pulseIn(ECHO_PIN, HIGH, 30000); 
     
     if (duration == 0) {
-        // Таймаут - объект слишком далеко или нет отклика
+       
         lastDistance = 999.0;
     } else {
-        // Расчет расстояния: время * скорость звука / 2
+       
         lastDistance = (duration * 0.034) / 2;
     }
     
@@ -54,7 +54,7 @@ bool UltrasonicSensor::checkPresence() {
     bool statusChanged = false;
     
     if (distance <= presenceThreshold && distance > 0) {
-        // Объект близко
+        
         if (!personPresent) {
             if (presenceStartTime == 0) {
                 presenceStartTime = currentTime;
@@ -67,7 +67,7 @@ bool UltrasonicSensor::checkPresence() {
             }
         }
     } else {
-        // Объект далеко
+        
         if (personPresent) {
             if (absenceStartTime == 0) {
                 absenceStartTime = currentTime;
@@ -79,7 +79,7 @@ bool UltrasonicSensor::checkPresence() {
                 Serial.println("Person LEFT - Display OFF");
             }
         } else {
-            presenceStartTime = 0; // Сброс если человек не задержался
+            presenceStartTime = 0; 
         }
     }
     

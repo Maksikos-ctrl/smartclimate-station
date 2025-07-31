@@ -299,6 +299,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - your.email@example.com
+Your Name - maksikos973@gmail.com
 
-Project Link: [https://github.com/Maksikos-ctrl/smartclimate-station](https://github.com/yourusername/smartclimate-station)
+Project Link: [https://github.com/Maksikos-ctrl/smartclimate-station](https://github.com/Maksikos-ctr/smartclimate-station)

@@ -14,9 +14,9 @@ void showSleepScreen() {
     tft.setTextColor(TFT_DARKGREY);
     tft.setTextSize(2);
     tft.setCursor(50, 100);
-    tft.print("Подойдите");
+    tft.print("Hand over the device");
     tft.setCursor(70, 130);
-    tft.print("ближе...");
+    tft.print("closer...");
 }
 
 void showWeatherData() {

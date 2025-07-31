@@ -7,7 +7,7 @@ SensorDHT::SensorDHT() : dht(DHTPIN, DHTTYPE) {
 }
 
 void SensorDHT::begin() {
-    pinMode(DHTPIN, INPUT_PULLUP);  // Включаем pull-up резистор
+    pinMode(DHTPIN, INPUT_PULLUP); 
     delay(100);
     dht.begin();
     Serial.println("DHT11 sensor initialized");
@@ -16,9 +16,9 @@ void SensorDHT::begin() {
 bool SensorDHT::readSensor() {
     unsigned long currentTime = millis();
     
-    // Проверяем, прошло ли достаточно времени с последнего чтения
+   
     if (currentTime - lastReadTime < READ_INTERVAL) {
-        return true; // Возвращаем последние валидные данные
+        return true; 
     }
     
     float newTemperature = dht.readTemperature();
