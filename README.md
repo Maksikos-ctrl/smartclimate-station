@@ -2,6 +2,8 @@
 
 An intelligent weather monitoring system with proximity-based display activation using ESP32 microcontroller.
 
+
+
 ## 🌟 Features
 
 - **Real-time environmental monitoring** - Temperature and humidity sensing
@@ -205,12 +207,34 @@ Temperature: 28.5°C, Humidity: 45.2%
 Distance: 67 cm, Person present: YES
 ```
 
+## 📸 Project Gallery
+
+### Complete Weather Station
+![SmartClimate Station](docs/images/smartclimate-station.jpg)
+*Complete SmartClimate Station with proximity detection and real-time environmental monitoring*
+
 ## 🎨 Display Layout
 
+### Visual States
+
+#### Sleep Mode
+```
+┌─────────────────────────────────┐
+│                                 │
+│                                 │
+│         Подойдите ближе...      │
+│                                 │
+│                                 │
+│  WiFi: Connected                │
+│  192.168.1.123                  │
+└─────────────────────────────────┘
+```
+
+#### Active Mode
 ```
 ┌─────────────────────────────────┐
 │         Weather Station         │
-│                          Active │
+│                          Online │
 │                                 │
 │  Humidity:              45.2 %  │
 │                                 │
@@ -220,6 +244,15 @@ Distance: 67 cm, Person present: YES
 │                                 │
 └─────────────────────────────────┘
 ```
+
+## 🔄 Workflow Demonstration
+
+1. **System Boot**: Display shows sleep screen
+2. **User Approaches**: HC-SR04 detects proximity < 100cm
+3. **Display Activation**: Screen switches to weather data view
+4. **Data Updates**: Real-time sensor readings every 2 seconds
+5. **User Leaves**: After 5 seconds, returns to sleep mode
+6. **Energy Saving**: Minimal power consumption in sleep state
 
 ## ⚙️ Configuration
 
@@ -258,12 +291,22 @@ static const int HUM_LABEL_Y = 80;
 
 ## 🚀 Future Enhancements
 
-- [ ] WiFi connectivity for remote monitoring
-- [ ] RFID access control
-- [ ] Additional sensors (pressure, light, air quality)
-- [ ] Web dashboard
-- [ ] Mobile app integration
-- [ ] AI-powered object classification
+### Planned Features
+- [ ] **WiFi connectivity** for remote monitoring and data logging
+- [ ] **RFID access control** for personalized user profiles
+- [ ] **Additional sensors** (pressure, light, air quality)
+- [ ] **Web dashboard** with historical data visualization
+- [ ] **Mobile app integration** for remote access
+- [ ] **AI-powered object classification** (distinguish between hand, person, objects)
+- [ ] **Redis database integration** for data persistence
+- [ ] **C++ desktop application** for advanced analytics
+
+### Potential Applications
+- **Smart Building**: Office climate monitoring and occupancy detection
+- **Agriculture**: Greenhouse environmental control
+- **Healthcare**: Patient room monitoring
+- **Smart Home**: Automated climate control based on presence
+- **Research**: Environmental data collection for studies
 
 ## 📊 Technical Specifications
 
@@ -301,4 +344,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Your Name - maksikos973@gmail.com
 
-Project Link: [https://github.com/Maksikos-ctrl/smartclimate-station](https://github.com/Maksikos-ctr/smartclimate-station)
+Project Link: [https://github.com/Maksikos-ctrl/smartclimate-station](https://github.com/Maksikos-ctrl/smartclimate-station)
