@@ -292,13 +292,13 @@ static const int HUM_LABEL_Y = 80;
 ## 🚀 Future Enhancements
 
 ### Planned Features
-- [ ] **WiFi connectivity** for remote monitoring and data logging
+- ✅ **WiFi connectivity** for remote monitoring and data logging
 - [ ] **RFID access control** for personalized user profiles
 - [ ] **Additional sensors** (pressure, light, air quality)
 - [ ] **Web dashboard** with historical data visualization
 - [ ] **Mobile app integration** for remote access
 - [ ] **AI-powered object classification** (distinguish between hand, person, objects)
-- [ ] **Redis database integration** for data persistence
+- ✅ **Firebase integration** for data persistence
 - [ ] **C++ desktop application** for advanced analytics
 
 ### Potential Applications

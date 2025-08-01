@@ -16,7 +16,7 @@ private:
     unsigned long absenceStartTime;
     
     static const unsigned long MEASUREMENT_INTERVAL = 200; 
-    static const unsigned long PRESENCE_DELAY = 1000;  /
+    static const unsigned long PRESENCE_DELAY = 1000;
     static const unsigned long ABSENCE_DELAY = 5000;  
 
 public:
